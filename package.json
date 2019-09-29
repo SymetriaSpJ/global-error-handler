@@ -1,0 +1,21 @@
+{
+  "name": "global-error-handler",
+  "version": "1.0.0",
+  "description": "Global Error Handler Plugin",
+  "cordova": {
+    "id": "global-error-handler",
+    "platforms": [
+      "android"
+    ]
+  },
+  "keywords": [
+    "android",
+    "cordova-android"
+  ],
+  "engines": [{
+    "name": "cordova",
+    "version": ">=3.0.0"
+  }],
+  "author": "",
+  "license": "Apache 2.0"
+}

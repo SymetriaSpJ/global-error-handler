@@ -1,0 +1,27 @@
+<?xml version='1.0' encoding='utf-8'?>
+<plugin id="cordova-plugin-global-error-handler" version="1.0.0" xmlns="http://apache.org/cordova/ns/plugins/1.0" xmlns:android="http://schemas.android.com/apk/res/android">
+    <name>GlobalErrorHandler</name>
+
+    <description>Global Error Handler Plugin</description>
+    <license>Apache 2.0</license>
+    <keywords>android, error</keywords>
+
+    <engines>
+        <engine name="cordova" version=">=3.0.0" />
+    </engines>
+
+    <js-module name="GlobalErrorHandler" src="www/GlobalErrorHandler.js">
+        <clobbers target="GlobalErrorHandler" />
+    </js-module>
+
+    <platform name="android">
+        <config-file target="config.xml" parent="/*">
+            <feature name="GlobalErrorHandler">
+                <param name="android-package" value="com.fitatu.phonegap.plugin.GlobalErrorHandler" />
+            </feature>
+        </config-file>
+        <framework src="com.android.support:support-v4:24.1.1+" />
+
+        <framework src="src/android/build.gradle" custom="true" type="gradleReference" />
+    </platform>
+</plugin>
