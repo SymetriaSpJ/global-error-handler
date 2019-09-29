@@ -17,7 +17,7 @@
     <platform name="android">
         <config-file target="config.xml" parent="/*">
             <feature name="GlobalErrorHandler">
-                <param name="android-package" value="com.fitatu.phonegap.plugin.GlobalErrorHandler" />
+                <param name="android-package" value="com.fitatu.errorHandler" />
             </feature>
         </config-file>
         <framework src="com.android.support:support-v4:24.1.1+" />

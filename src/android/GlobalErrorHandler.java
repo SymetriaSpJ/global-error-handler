@@ -1,4 +1,4 @@
-package com.fitatu.phonegap.plugin;
+package com.fitatu.errorHandler;
 
 import org.apache.cordova.CordovaPlugin;
 import org.apache.cordova.CordovaInterface;
