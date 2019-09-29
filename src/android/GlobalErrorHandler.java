@@ -3,9 +3,13 @@ package com.fitatu.phonegap.plugin;
 import org.apache.cordova.CordovaPlugin;
 import org.apache.cordova.CordovaInterface;
 import org.apache.cordova.CordovaWebView;
+import org.apache.cordova.CallbackContext;
 import android.content.Context;
 import android.app.Activity;
 import android.widget.Toast;
+import org.json.JSONException;
+import org.json.JSONArray;
+import org.json.JSONObject;
 
 public class GlobalErrorHandler extends CordovaPlugin {
     @Override

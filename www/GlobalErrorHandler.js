@@ -1,5 +1,6 @@
-var GlobalErrorHandler = function() {};
+var exec = cordova.require('cordova/exec');
 
+var GlobalErrorHandler = function() {};
 
 GlobalErrorHandler.prototype.initializeCapturingErrors = function(onSuccess, onError) {
     var errorCallback = function(obj) {
