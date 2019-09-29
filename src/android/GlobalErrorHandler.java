@@ -8,10 +8,6 @@ import android.app.Activity;
 import android.widget.Toast;
 
 public class GlobalErrorHandler extends CordovaPlugin {
-
-    private LegacyDisplayAdPresenter presenter = null;
-
-
     @Override
     public void initialize(CordovaInterface cordova, final CordovaWebView webView) {
         super.initialize(cordova, webView);
@@ -21,5 +17,27 @@ public class GlobalErrorHandler extends CordovaPlugin {
                 System.out.println("error");
             }
         });
+    }
+
+    @Override
+    public boolean execute(String action, JSONArray args, CallbackContext callbackContext) throws JSONException {
+        JSONObject options = args.optJSONObject(0);
+
+        if ("initializeCapturingErrors".equals(action)) {
+            init(options, callbackContext);
+            return true;
+        }
+
+        return false;
+    }
+
+    private void initializeCapturingErrors(JSONObject options, CallbackContext callbackContext) {
+        Thread.currentThread().setUncaughtExceptionHandler(new Thread.UncaughtExceptionHandler() {
+            public void uncaughtException(Thread t, Throwable e) {
+                System.out.println("HERE ERROR");
+            }
+        });
+
+        callbackContext.success("Success!");
     }
 }
