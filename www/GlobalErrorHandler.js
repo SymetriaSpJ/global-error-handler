@@ -2,14 +2,9 @@ var exec = cordova.require('cordova/exec');
 
 var GlobalErrorHandler = function() {};
 
-GlobalErrorHandler.prototype.initializeCapturingErrors = function(onSuccess, onError) {
-    var errorCallback = function(obj) {
-        onError(obj);
-    };
-
-    var successCallback = function(obj) {
-        onSuccess(obj);
-    };
+GlobalErrorHandler.prototype.initializeCapturingErrors = function() {
+    var errorCallback = function() {};
+    var successCallback = function() {};
 
     exec(successCallback, errorCallback, 'GlobalErrorHandler', 'initializeCapturingErrors', []);
 };
