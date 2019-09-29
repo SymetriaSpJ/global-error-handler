@@ -14,13 +14,18 @@
         <clobbers target="GlobalErrorHandler" />
     </js-module>
 
+
+
+
     <platform name="android">
         <config-file target="config.xml" parent="/*">
             <feature name="GlobalErrorHandler">
-                <param name="android-package" value="com.fitatu.errorHandler" />
+                <param name="android-package" value="com.fitatu.errorHandler.GlobalErrorHandler" />
             </feature>
         </config-file>
+        <source-file src="src/android/GlobalErrorHandler.java" target-dir="src/com/fitatu/errorHandler/GlobalErrorHandler" />
         <framework src="com.android.support:support-v4:24.1.1+" />
+
 
         <framework src="src/android/build.gradle" custom="true" type="gradleReference" />
     </platform>
