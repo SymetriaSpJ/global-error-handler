@@ -24,7 +24,7 @@ public class GlobalErrorHandler extends CordovaPlugin {
         JSONObject options = args.optJSONObject(0);
 
         if ("initializeCapturingErrors".equals(action)) {
-            init(options, callbackContext);
+            initializeCapturingErrors(options, callbackContext);
             return true;
         }
 
