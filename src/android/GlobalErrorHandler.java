@@ -55,7 +55,7 @@ public class GlobalErrorHandler extends CordovaPlugin {
 
     private void startError(JSONObject options, CallbackContext callbackContext) {
         System.out.println("#debug GEH startError 1");
-        Integer x = 10 / 0;
+        throw new RuntimeException("This is a crash");
 
         callbackContext.success("Success!");
     }
