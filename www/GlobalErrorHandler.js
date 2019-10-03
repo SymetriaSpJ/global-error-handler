@@ -16,6 +16,13 @@ GlobalErrorHandler.prototype.startError = function() {
     exec(successCallback, errorCallback, 'GlobalErrorHandler', 'startError', []);
 };
 
+GlobalErrorHandler.prototype.startSecondError = function() {
+    var errorCallback = function() {};
+    var successCallback = function() {};
+
+    exec(successCallback, errorCallback, 'GlobalErrorHandler', 'startSecondError', []);
+};
+
 if (typeof module != 'undefined' && module.exports) {
     module.exports = GlobalErrorHandler;
 }

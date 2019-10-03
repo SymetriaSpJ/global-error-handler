@@ -59,4 +59,12 @@ public class GlobalErrorHandler extends CordovaPlugin {
 
         callbackContext.success("Success!");
     }
+
+    private void startSecondError(JSONObject options, CallbackContext callbackContext) {
+        System.out.println("#debug GEH startError 2");
+        Integer i = null;
+        i.byteValue();
+
+        callbackContext.success("Success!");
+    }
 }
