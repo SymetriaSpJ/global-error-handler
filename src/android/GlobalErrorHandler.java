@@ -19,9 +19,21 @@ public class GlobalErrorHandler extends CordovaPlugin {
 
         Thread.currentThread().setUncaughtExceptionHandler(new Thread.UncaughtExceptionHandler() {
             public void uncaughtException(Thread t, Throwable e) {
-                System.out.println("error");
+                System.out.println("#debug thread error");
             }
         });
+
+        cordovaInstance.getActivity().runOnUiThread(new Runnable() {
+            @Override
+            public void run() {
+                Thread.currentThread().setUncaughtExceptionHandler(new Thread.UncaughtExceptionHandler() {
+                    public void uncaughtException(Thread t, Throwable e) {
+                        System.out.println("#debug uithread error");
+                    }
+                });
+            }
+        });
+
         System.out.println("#debug GEH initialize error handler 2");
     }
 
@@ -47,6 +59,8 @@ public class GlobalErrorHandler extends CordovaPlugin {
                 System.out.println("HERE ERROR");
             }
         });
+
+
         System.out.println("#debug GEH initializeCapturingErrors 1");
 
         callbackContext.success("Success!");
