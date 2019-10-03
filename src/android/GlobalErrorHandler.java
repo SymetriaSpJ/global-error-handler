@@ -15,12 +15,14 @@ public class GlobalErrorHandler extends CordovaPlugin {
     @Override
     public void initialize(CordovaInterface cordova, final CordovaWebView webView) {
         super.initialize(cordova, webView);
+        System.out.println("#debug GEH initialize error handler 1");
 
         Thread.currentThread().setUncaughtExceptionHandler(new Thread.UncaughtExceptionHandler() {
             public void uncaughtException(Thread t, Throwable e) {
                 System.out.println("error");
             }
         });
+        System.out.println("#debug GEH initialize error handler 2");
     }
 
     @Override
@@ -36,11 +38,13 @@ public class GlobalErrorHandler extends CordovaPlugin {
     }
 
     private void initializeCapturingErrors(JSONObject options, CallbackContext callbackContext) {
+        System.out.println("#debug GEH initializeCapturingErrors 1");
         Thread.currentThread().setUncaughtExceptionHandler(new Thread.UncaughtExceptionHandler() {
             public void uncaughtException(Thread t, Throwable e) {
                 System.out.println("HERE ERROR");
             }
         });
+        System.out.println("#debug GEH initializeCapturingErrors 1");
 
         callbackContext.success("Success!");
     }
