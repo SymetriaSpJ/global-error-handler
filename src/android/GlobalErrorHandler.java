@@ -48,9 +48,9 @@ public class GlobalErrorHandler extends CordovaPlugin {
             startError(options, callbackContext);
             return true;
         } else if ("startSecondError".equals(action)) {
-                     startError(options, callbackContext);
-                     return true;
-                 }
+             startSecondError(options, callbackContext);
+             return true;
+         }
 
         return false;
     }
