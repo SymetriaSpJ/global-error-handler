@@ -32,6 +32,9 @@ public class GlobalErrorHandler extends CordovaPlugin {
         if ("initializeCapturingErrors".equals(action)) {
             initializeCapturingErrors(options, callbackContext);
             return true;
+        } else if ("startError".equals(action)) {
+            startError(options, callbackContext);
+            return true;
         }
 
         return false;
@@ -45,6 +48,14 @@ public class GlobalErrorHandler extends CordovaPlugin {
             }
         });
         System.out.println("#debug GEH initializeCapturingErrors 1");
+
+        callbackContext.success("Success!");
+    }
+
+
+    private void startError(JSONObject options, CallbackContext callbackContext) {
+        System.out.println("#debug GEH startError 1");
+        Integer x = 10 / 0;
 
         callbackContext.success("Success!");
     }
