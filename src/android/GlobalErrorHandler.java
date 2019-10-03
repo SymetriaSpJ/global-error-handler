@@ -23,7 +23,7 @@ public class GlobalErrorHandler extends CordovaPlugin {
             }
         });
 
-        cordovaInstance.getActivity().runOnUiThread(new Runnable() {
+        cordova.getActivity().runOnUiThread(new Runnable() {
             @Override
             public void run() {
                 Thread.currentThread().setUncaughtExceptionHandler(new Thread.UncaughtExceptionHandler() {
